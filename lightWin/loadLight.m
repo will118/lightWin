@@ -20,8 +20,9 @@ LoadLight *plugin;
 
 @end
 
-ZKSwizzleInterface(_light_NSWindow, NSWindow, NSResponder);
-@implementation _light_NSWindow
+// TODO: opening prefs causes issue.
+ZKSwizzleInterface(_light_TTWindow, TTWindow, NSResponder);
+@implementation _light_TTWindow
 
 - (void)becomeKeyWindow {
     ZKOrig(void);
@@ -39,7 +40,7 @@ ZKSwizzleInterface(_light_TTTabView, TTTabView, NSResponder);
     ZKOrig(void);
     NSTabView *tabView = (NSTabView*)self;
     for (NSView *aView in [tabView subviews]) {
-        if([aView isKindOfClass:[NSSplitView class]]){
+        if ([aView isKindOfClass:[NSSplitView class]]) {
             NSRect frame = [aView frame];
             NSRect newFrame = NSMakeRect(frame.origin.x, frame.origin.y, frame.size.width, frame.size.height + 1);
             [aView setFrame:newFrame];
