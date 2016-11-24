@@ -20,7 +20,7 @@ LoadLight *plugin;
 
 @end
 
-// TODO: opening prefs causes issue.
+
 ZKSwizzleInterface(_light_TTWindow, TTWindow, NSResponder);
 @implementation _light_TTWindow
 
@@ -30,6 +30,11 @@ ZKSwizzleInterface(_light_TTWindow, TTWindow, NSResponder);
     [win setHasShadow:NO];
     [win setStyleMask:NSWindowStyleMaskBorderless | NSWindowStyleMaskResizable];
 }
+
+-(BOOL)canBecomeKeyWindow {
+    return YES;
+}
+
 @end
 
 
