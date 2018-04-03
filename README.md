@@ -1,4 +1,4 @@
-##lightWin
-mySIMBL bundle for borderless, shadowless Terminal.app
+## lightWin
+`mySIMBL` bundle for borderless, shadowless Terminal.app
 
 ![ScreenShot](https://raw.github.com/will118/lightWin/master/screenshot.png)
